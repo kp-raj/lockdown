@@ -6,9 +6,7 @@ app = Flask(__name__)
 
 DATABASE_URL = 'postgres://muzdyqyc:FFhyjH8odvCSIpj8tlj-ZCopCknLjJEt@queenie.db.elephantsql.com:5432/muzdyqyc'
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-'''
-conn=psycopg2.connect("dbname=lockdown user=postgres password=Ksvap@25")
-'''
+
 def display(type):
     if type=='movies':
         with conn:
