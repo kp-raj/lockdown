@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<form action='{{url_for("add")}}' method="GET"  style="margin: 1%;">
+<input hidden name='email' value={{email}}>
+<input hidden name='type' value={{type}}>
+<label for="movie">1-Title:</label>
+<input type="text" name='name1' placeholder="Name" class="mb-3">
+<label for="year">year:</label>
+<input type='text' name='year1' placeholder="Year">
+<label for="language">language:</label>
+<input type='text' name="language1" placeholder="Language"><br>
+<label for="movie">2-Title:</label>
+<input type="text" name='name2' placeholder="Name" class="mb-3">
+<label for="year">year:</label>
+<input type='text' name='year2' placeholder="Year">
+<label for="language">language:</label>
+<input type='text' name="language2" placeholder="Language"><br>
+<label for="movie">3-Title:</label>
+<input type="text" name='name3' placeholder="Name" class="mb-3">
+<label for="year">year:</label>
+<input type='text' name='year3' placeholder="Year">
+<label for="language">language:</label>
+<input type='text' name="language3" placeholder="Language"><br>
+<label for="movie">4-Title:</label>
+<input type="text" name='name4' placeholder="Name" class="mb-3">
+<label for="year">year:</label>
+<input type='text' name='year4' placeholder="Year">
+<label for="language">language:</label>
+<input type='text' name="language4" placeholder="Language"><br>
+<label for="movie">5-Title:</label>
+<input type="text" name='name5' placeholder="Name" class="mb-3">
+<label for="year">year:</label>
+<input type='text' name='year5' placeholder="Year">
+<label for="language">language:</label>
+<input type='text' name="language5" placeholder="Language"><br>
+<input type="submit" value="submit">
+</form>
+
+
+{%endblock%}

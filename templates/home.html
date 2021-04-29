@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<table class="table table-dark table-striped">
+    <tr>
+        <th>Title</th>
+        <th>year</th>
+        <th>Language</th>
+        <th>Suggested by</th>
+    </tr>
+    {%for disp in display%}
+    <tr>
+        <td>{{disp[1].capitalize()}}</td>
+        <td>{{disp[2]}}</td>
+        <td>{{disp[3].capitalize()}}</td>
+        <td>{{disp[4]}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+
+
+{%endblock%}

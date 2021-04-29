@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<form action="{{url_for('verify_mail')}}" method="GET" style="margin: 2%;">
+    <div class="input-group mb-3" style="margin: auto; width: 50%;">
+        <span class="input-group-text" id="basic-addon3">E-mail:</span>
+        <input type="email" class="form-control" name='email' id="basic-url" aria-describedby="basic-addon3" required>
+    </div>
+        <div id="emailHelp" class="form-text">We never save or share your email</div><br>
+        <input type="radio" name="type" value="movies" required>
+        <label for="movies">Movies</label>
+        <input type="radio" name="type" value="books">
+        <label for="movies">Books</label>
+        <input type="radio" name="type" value="shows">
+        <label for="movies">Shows</label><br><br>
+    <input type="submit" value="submit">
+</form>
+
+{%endblock%}

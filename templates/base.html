@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</head>
+<body style="background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;text-align: center; color: wheat;">
+<nav class="navbar navbar-dark bg-dark" style="color: white;
+background-color:silver;
+background-image:
+radial-gradient(circle at 100% 150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 0    150%, silver 24%, white 24%, white 28%, silver 28%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 50%  100%, white 10%, silver 10%, silver 23%, white 23%, white 30%, silver 30%, silver 43%, white 43%, white 50%, silver 50%, silver 63%, white 63%, white 71%, transparent 71%, transparent),
+radial-gradient(circle at 100% 50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent),
+radial-gradient(circle at 0    50%, white 5%, silver 5%, silver 15%, white 15%, white 20%, silver 20%, silver 29%, white 29%, white 34%, silver 34%, silver 44%, white 44%, white 49%, transparent 49%, transparent);
+background-size: 100px 50px;">
+    <a href="{{url_for('index')}}" style="text-decoration: none;margin-left: 2%;">
+    <button class="btn btn-secondary btn-lg">Movies</button>
+    </a>
+    <a href="{{url_for('books')}}" style="text-decoration: none;">
+        <button class="btn btn-secondary btn-lg">Books</button>
+    </a>
+    <a href="{{url_for('shows')}}" style="text-decoration: none;">
+        <button class="btn btn-secondary btn-lg">Shows</button>
+    </a>
+    <a href="{{url_for('email')}}" style="text-decoration: none;margin-right: 2%;">
+        <button class="btn btn-secondary btn-lg">Suggest</button>
+    </a>
+
+  </nav>
+
+{%if base=='home'%}
+  <div style="margin: 3%;">
+  <h1>Here is the list of {{type}} suggestions from the lockdown</h1>
+  <h3>Click on Suggest above to add your suggestions</h3>
+  </div>
+{%endif%}
+{%if base=='email'%}
+  <div style="margin: 3%;">
+    <h3>Please provide your email address</h3>
+    <p style="color: rgb(253, 75, 75);">{{message}}</p>
+  </div>
+{%endif%}
+{%if base=='suggest'%}
+  <div style="margin: 3%;">
+    <h3>Please submit your best 5 {{type}} suggestions from the lockdown</h3>
+    <p>Enter atleast the name for us to add your entry to the list</p>
+  </div>
+{%endif%}
+{%if base=='error'%}
+<h2>You have reached an unknown page!</h2>
+<h3>Please click on buttons above to come back</h3>
+{%endif%}
+
+<div class="card" style="text-align: center; margin-left: 10%; margin-right: 10%;
+background: rgba( 255, 255, 255, 0.05 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 14.5px );
+-webkit-backdrop-filter: blur( 14.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );">
+    {%block content%}
+    {%endblock%}
+</div>
+</body>
+</html>
