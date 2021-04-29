@@ -3,8 +3,10 @@ import psycopg2
 from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
-
+'''
 DATABASE_URL = 'postgres://muzdyqyc:FFhyjH8odvCSIpj8tlj-ZCopCknLjJEt@queenie.db.elephantsql.com:5432/muzdyqyc'
+'''
+DATABASE_URL='postgres://ldifxbgmuxhhyi:84ac0f3dd8a0145c59e55de4d4e63f42a4ab57f4b0c249a0d6343f00f405d2dc@ec2-3-234-85-177.compute-1.amazonaws.com:5432/d639pt0rh5buqn'
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 def display(type):
